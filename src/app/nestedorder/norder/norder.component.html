@@ -1,0 +1,48 @@
+<div>
+{{details.value | json}}
+
+</div>
+
+<div class="container formcontainer">
+    <form [formGroup]="details">
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" placeholder="please enter your first Name">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" placeholder="please enter your last Name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" maxlength="2" class="form-control" formControlName="age" (keypress)="numberOnly($event)" placeholder="please enter your Age">
+        </div>
+        <div class="address" formGroupName="address">
+            <div class="form-group">
+                <label for="address">street</label>
+                <input type="textarea" class="form-control" formControlName="street" placeholder="please enter your Age">
+            </div>
+            <div class="form-group">
+                <label for="name">Email address</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="please enter your email">
+            </div>
+            <div class="form-group">
+                <label for="Phone Number">Phone Number</label>
+                <input type="text" (keypress)="numberOnly($event)" maxlength="10" class="form-control" formControlName="phone" placeholder="please enter your phone number">
+            </div>
+
+        </div>
+
+        <div class="form-group buttons">
+            <button type="submit" class="btn save icon-checkmark">save</button>
+            <button class="btn cancel icon-cross" type="button" >load</button>
+            <button class="btn cancel icon-cross" type="button" (click)="partiallyloadData()">partiallLoad</button>
+
+        </div>
+
+
+    </form>
+
+
+
+</div>

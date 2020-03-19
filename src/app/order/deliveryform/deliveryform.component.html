@@ -1,0 +1,53 @@
+<div>
+output: {{person.value |json}}
+<br>
+output: {{person.form.valid}}
+<br>
+fname:{{fname.invalid }} and {{fname.untouched }} and and {{fname.pristine }}
+</div>
+
+<div class="container formcontainer">
+    <form  #person ="ngForm">
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text"  name="firstname" ngModel class="form-control" 
+             placeholder="please enter your first Name" required #fname="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" ngModel class="form-control" placeholder="please enter your last Name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" maxlength="2" class="form-control" (keypress)="numberOnly($event)"  name="age" ngModel placeholder="please enter your Age">
+        </div>
+        <div class="address" ngModelGroup="address">
+            <div class="form-group">
+                <label for="address">street</label>
+                <input type="textarea" class="form-control"  name="street" ngModel placeholder="please enter your Age">
+            </div>
+            <div class="form-group">
+                <label for="name">Email address</label>
+                <input type="text" class="form-control" name="email" ngModel placeholder="please enter your email">
+            </div>
+            <div class="form-group">
+                <label for="Phone Number">Phone Number</label>
+                <input type="text" (keypress)="numberOnly($event)" maxlength="10"  class="form-control" name="phone" ngModel placeholder="please enter your phone number">
+            </div>
+
+        </div>
+    
+        <div class="form-group buttons">
+            <button type="submit" [disabled]="person.form.invalid" class="btn save icon-checkmark">save</button>
+            <button class="btn cancel icon-cross">Cancel</button>
+ 
+        </div>
+        
+
+        </form>
+
+
+
+</div>
+
+

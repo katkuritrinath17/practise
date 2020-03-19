@@ -1,0 +1,25 @@
+.formcontainer {
+	width: 60%;
+    margin-left: 20%;
+    margin-top: 50px;
+    
+}
+
+.formcontainer .buttons {
+	float: right
+}
+
+.formcontainer .buttons .btn {
+	margin-left: 10px;
+	min-width: 80px
+}
+
+.formcontainer .buttons .btn.save {
+	background: #e2ef29;
+	color: #fffbfb;
+}
+
+.formcontainer .buttons .btn.cancel {
+	background: #de6077;
+	color: #fffbfb;
+}
